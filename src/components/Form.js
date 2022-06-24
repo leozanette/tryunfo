@@ -2,6 +2,27 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class Form extends Component {
+  // constructor() {
+  //   super();
+  //   this.state = {
+  //     cardName: '',
+  //     cardDescription: '',
+  //     cardAttr1: '',
+  //     cardAttr2: '',
+  //     cardAttr3: '',
+  //     cardImage: '',
+  //     cardRare: '',
+  //     cardTrunfo: '',
+  //   }
+  // }
+
+  // onInputChange = (event) => {
+  //   this.setState({ [event.target.name]: event.target.value });
+  // }
+
+  // isSaveButtonDisabled
+  // onSaveButtonClick
+
   render() {
     const { cardName,
       cardDescription,
