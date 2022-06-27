@@ -2,27 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class Form extends Component {
-  // constructor() {
-  //   super();
-  //   this.state = {
-  //     cardName: '',
-  //     cardDescription: '',
-  //     cardAttr1: '',
-  //     cardAttr2: '',
-  //     cardAttr3: '',
-  //     cardImage: '',
-  //     cardRare: '',
-  //     cardTrunfo: '',
-  //   }
-  // }
-
-  // onInputChange = (event) => {
-  //   this.setState({ [event.target.name]: event.target.value });
-  // }
-
-  // isSaveButtonDisabled
-  // onSaveButtonClick
-
   render() {
     const { cardName,
       cardDescription,
@@ -41,39 +20,50 @@ class Form extends Component {
         <input
           type="text"
           data-testid="name-input"
+          name="cardName"
           value={ cardName }
           onChange={ onInputChange }
         />
         <textarea
           data-testid="description-input"
+          name="cardDescription"
           value={ cardDescription }
           onChange={ onInputChange }
         />
         <input
           type="number"
           data-testid="attr1-input"
+          name="cardAttr1"
           value={ cardAttr1 }
           onChange={ onInputChange }
         />
         <input
           type="number"
           data-testid="attr2-input"
+          name="cardAttr2"
           value={ cardAttr2 }
           onChange={ onInputChange }
         />
         <input
           type="number"
           data-testid="attr3-input"
+          name="cardAttr3"
           value={ cardAttr3 }
           onChange={ onInputChange }
         />
         <input
           type="text"
           data-testid="image-input"
+          name="cardImage"
           value={ cardImage }
           onChange={ onInputChange }
         />
-        <select data-testid="rare-input" value={ cardRare } onChange={ onInputChange }>
+        <select
+          data-testid="rare-input"
+          name="cardRare"
+          value={ cardRare }
+          onChange={ onInputChange }
+        >
           <option value="normal">normal</option>
           <option value="raro">raro</option>
           <option value="muito raro">muito raro</option>
@@ -81,6 +71,7 @@ class Form extends Component {
         <input
           type="checkbox"
           data-testid="trunfo-input"
+          name="cardTrunfo"
           checked={ cardTrunfo }
           onChange={ onInputChange }
         />
