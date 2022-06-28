@@ -2,19 +2,21 @@ import React from 'react';
 import Form from './components/Form';
 import Card from './components/Card';
 
+const INITIAL_STATE = {
+  cardName: '',
+  cardDescription: '',
+  cardAttr1: 0,
+  cardAttr2: 0,
+  cardAttr3: 0,
+  cardImage: '',
+  cardRare: 'normal',
+  cardTrunfo: false,
+};
+
 class App extends React.Component {
   constructor() {
     super();
-    this.state = {
-      cardName: '',
-      cardDescription: '',
-      cardAttr1: 0,
-      cardAttr2: 0,
-      cardAttr3: 0,
-      cardImage: '',
-      cardRare: 'normal',
-      cardTrunfo: false,
-    };
+    this.state = INITIAL_STATE;
   }
 
   isSaveButtonDisabled = (state) => {
@@ -53,7 +55,9 @@ class App extends React.Component {
     });
   };
 
-  // onSaveButtonClick
+  onSaveButtonClick = () => {
+    this.setState(INITIAL_STATE);
+  }
 
   render() {
     return (
@@ -63,6 +67,7 @@ class App extends React.Component {
           { ...this.state }
           onInputChange={ this.onInputChange }
           isSaveButtonDisabled={ this.isSaveButtonDisabled(this.state) }
+          onSaveButtonClick={ this.onSaveButtonClick }
         />
         <Card { ...this.state } />
       </div>
