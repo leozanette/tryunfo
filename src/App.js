@@ -12,6 +12,7 @@ const INITIAL_STATE = {
   cardImage: '',
   cardRare: 'normal',
   cardTrunfo: false,
+  hasTrunfo: false,
 };
 
 class App extends React.Component {
@@ -71,8 +72,14 @@ class App extends React.Component {
     this.setState((prevState) => ({
       ...INITIAL_STATE,
       cards: [...prevState.cards, newCard],
+      hasTrunfo: this.superTrunfo,
     }));
   };
+
+  superTrunfo = () => {
+    const { cards } = this.state;
+    return cards.some((cartas) => cartas.cardTrunfo === true);
+  }
 
   render() {
     const { cards } = this.state;
