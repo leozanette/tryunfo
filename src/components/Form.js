@@ -17,26 +17,35 @@ class Form extends Component {
       onSaveButtonClick } = this.props;
     return (
       <form>
-        <input
-          type="text"
-          data-testid="name-input"
-          name="cardName"
-          value={ cardName }
-          onChange={ onInputChange }
-        />
-        <textarea
-          data-testid="description-input"
-          name="cardDescription"
-          value={ cardDescription }
-          onChange={ onInputChange }
-        />
-        <input
-          type="number"
-          data-testid="attr1-input"
-          name="cardAttr1"
-          value={ cardAttr1 }
-          onChange={ onInputChange }
-        />
+        <label htmlFor="cardName">
+          Nome:
+          <input
+            type="text"
+            data-testid="name-input"
+            name="cardName"
+            value={ cardName }
+            onChange={ onInputChange }
+          />
+        </label>
+        <label htmlFor="cardDescription">
+          Descrição:
+          <textarea
+            data-testid="description-input"
+            name="cardDescription"
+            value={ cardDescription }
+            onChange={ onInputChange }
+          />
+        </label>
+        <label htmlFor="cardAttr1">
+          Atributo 1
+          <input
+            type="number"
+            data-testid="attr1-input"
+            name="cardAttr1"
+            value={ cardAttr1 }
+            onChange={ onInputChange }
+          />
+        </label>
         <input
           type="number"
           data-testid="attr2-input"
@@ -91,9 +100,9 @@ class Form extends Component {
 Form.propTypes = {
   cardName: PropTypes.string.isRequired,
   cardDescription: PropTypes.string.isRequired,
-  cardAttr1: PropTypes.number.isRequired,
-  cardAttr2: PropTypes.number.isRequired,
-  cardAttr3: PropTypes.number.isRequired,
+  cardAttr1: PropTypes.string.isRequired,
+  cardAttr2: PropTypes.string.isRequired,
+  cardAttr3: PropTypes.string.isRequired,
   cardImage: PropTypes.string.isRequired,
   cardRare: PropTypes.string.isRequired,
   cardTrunfo: PropTypes.bool.isRequired,
